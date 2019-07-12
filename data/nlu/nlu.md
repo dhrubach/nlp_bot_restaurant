@@ -52,6 +52,8 @@
 - oh cool
 - yes
 - fine
+- i will take that
+- that sounds just right
 
 ## intent:bye
 - goodbye
@@ -80,6 +82,7 @@
 
 ## intent:deny
 - no
+- nope
 - definitely not
 - never
 - absolutely not
@@ -117,6 +120,10 @@
 - i don't want either of those
 - nah thanks
 - neither of these
+- i don't like that option
+- neither will work
+- suggest some other option
+- is this the best you can do
 
 ## intent:greet
 - Hi
