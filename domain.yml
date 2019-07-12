@@ -1,0 +1,11 @@
+entities:
+  - cuisine
+  - location
+
+intents:
+  - affirm
+  - bye
+  - deny
+  - greet
+  - out_of_scope
+  - thank
