@@ -1,7 +1,11 @@
+import os
+import logging
+
 from rasa.constants import DEFAULT_DATA_PATH, DEFAULT_MODELS_PATH
 from rasa.train import train_nlu
 
-import os
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("__name__")
 
 
 def train_nlu_model():
