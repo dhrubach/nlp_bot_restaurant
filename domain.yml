@@ -1,9 +1,11 @@
 entities:
   - cuisine
-  - location
+  - location-tier1
+  - localtion-tier2
 
 intents:
   - affirm
+  - ask_restaurant
   - bye
   - deny
   - greet
