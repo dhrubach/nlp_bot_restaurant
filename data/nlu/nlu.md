@@ -335,76 +335,77 @@
 - thanks!
 
 ## intent:ask_restaurant
-- Find me a place to eat in [Bangalore](location-tier1)
-- I need a new restaurant in [Bengaluru](location-tier1)
-- help me find restaurant in [bngalore](location-tier1)
-- I'm gonna need help finding a [indian](cuisine) restaurant in [bengalluru](location-tier1)
-- Hey help me find a restaurant in [bangalore](location-tier1)
-- I need to find a restaurant in [New Delhi](location-tier1)
-- i want a [french](cuisine) restaurant in [NewDelhi](location-tier1)
-- i'm looking for a [Chinese](cuisine) restaurant in [Dilli](location-tier1)
-- Hey, can you help me with locating this restaurant in [Dellhi](location-tier1)
-- Find a restaurant for me in [newdelhi](location-tier1)?
-- Can you find me a restaurant in [Newdelhi](location-tier1)?
-- Where should I eat in [new delhi](location-tier1)?
-- Suggest me a good restaurant around [new Delhi](location-tier1)
-- I need to find this restaurant in [Delhi](location-tier1)
-- What's a good place to eat [marathi](cuisine) food in [Mumbai](location-tier1)
-- Find a restaurant for me where I can eat [north indian](cuisine) in [Bombay](location-tier1)
-- Find a restaurant for me to eat [mexican](cuisine) at [mumbai](location-tier1)
-- I am hungry, find me some place to go eat [italian](cuisine) in [bombay](location-tier1)
-- Show me the closest open restaurant in [Kolkata](location-tier1)
-- Recommend me a restaurant around [kolkata](location-tier1)
-- Help me find a restaurant in [Calcutta](location-tier1)
-- Hey help me find a restaurant in [calcutta](location-tier1)
-- Could you find a restaurant for me in [kolkatta](location-tier1)? 
-- Could you find me a restaurant in [calcuta](location-tier1)? 
-- Pick a restaurant for me, please in [Chennai](location-tier1)
-- How can you help me find a restaurant in [chennai](location-tier1)?
-- Can you find a restaurant for me in [Madras](location-tier1)?
-- Would you find me a restaurant in [madras](location-tier1)??
-- Would you find a [south indian](cuisine) restaurant for me in [Chennai](location-tier1)?
-- Could you find me a restaurant to eat at [lucknow](location-tier1)?
-- Find me a place to eat in [Mysore](location-tier2)
-- I need a new restaurant in [mysore](location-tier2)
-- help me find restaurant in [Mysuru](location-tier2)
-- I'm gonna need help finding a [marathi](cuisine) restaurant in [mysuru](location-tier2)
-- Hey help me find a restaurant in [Bhubaneswar](location-tier2)
-- I need to find a restaurant in [Chandigarh](location-tier2)
-- i want a [french](cuisine) restaurant in [Gwalior](location-tier2)
-- i'm looking for a [Chinese](cuisine) restaurant in [Nagpur](location-tier2)
-- Hey, can you help me with locating this restaurant in [Gurgaon](location-tier2)
-- Find a restaurant for me in [Indore](location-tier2)?
-- Can you find me a restaurant in [Jamshedpur](location-tier2)?
-- Where should I eat in [Kanpur](location-tier2)?
-- Suggest me a good restaurant around [Kochi](location-tier2)
-- I need to find this restaurant in [Cochin](location-tier2)
-- What's a good place to eat in [kochi](location-tier2)
-- Find a restaurant for me where I can eat [north indian](cuisine) in [Cochin](location-tier2)
-- Find a restaurant for me to eat [mexican](cuisine) at [Mangalore](location-tier2)
-- I am hungry, find me some place to go eat [italian](cuisine) in [mangalore](location-tier2)
-- Show me the closest open restaurant in [Mangaluru](location-tier2)
-- Recommend me a restaurant around [mangaluru](location-tier2)
-- Help me find a restaurant in [Visakhapatnam](location-tier2)
-- Hey help me find a restaurant in [visakhapatnam](location-tier2)
-- Could you find a restaurant for me in [Vizag](location-tier2)? 
-- Could you find me a restaurant in [vizag](location-tier2)? 
-- Pick a restaurant for me, please in [Thiruvananthapuram](location-tier2)
-- How can you help me find a restaurant in [thiruvananthapuram](location-tier2)?
-- Can you find a restaurant for me in [Trivandrum](location-tier2)?
-- Would you find me a restaurant in [trivandrum](location-tier2)??
-- Would you find a [south indian](cuisine) restaurant for me in [Travancore](location-tier2)?
-- Could you find me a restaurant to eat at [travancore](location-tier2)?
+<!-- only 'location' entity -->
+- Find me a place to eat in [Bangalore](location)
+- I need a new restaurant in [Bengaluru](location)
+- help me find restaurant in [Bngalore](location)
+- Could you find me a restaurant to eat at [bngalore](location)?
+- Can you find me a restaurant in [Bombay](location)?
+- Hey, help me find a restaurant in [Mumbai](location)
+- I need to find a restaurant in [Kolkata](location)
+- Find a restaurant for me in [Calcutta](location)
+- Where should I eat in [Delhi](location)?
+- Suggest me a good restaurant around [New Delhi](location)
+- I need to find this restaurant in [Dilli](location)
+- Show me the closest open restaurant in [Chennai](location)
+- Hey help me find a restaurant in [Madras](location)
+- Help me find a restaurant in [Surat](location)
+- Recommend me a restaurant around [Pune](location)
+- Could you find a restaurant for me in [Belgaum](location)? 
+- Could you find me a restaurant in [Agra](location)? 
+- Pick a restaurant for me, please in [Kochi](location)
+- How can you help me find a restaurant in [Jamshedpur](location)?
+- Can you find a restaurant for me in [Chandigarh](location)?
+- Would you find me a restaurant in [Visakhapatnam](location)??
+- Could you find me a restaurant to eat at [Gurgaon](location)?
+<!-- location + cuisine entities -->
+- I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
+- i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
+- Hey, can you help me with locating a [mexican](cuisine) restaurant in [Lakhanpur](location)
+- i want a [french](cuisine) restaurant in [Vizag](location)
+- What's a good place to eat [marathi](cuisine) food in [Bangalore](location)
+- Find a restaurant for me where I can eat [north indian](cuisine) in [Jaipur](location)
+- Find a restaurant for me to eat [mexican](cuisine) at [Faridabad](location)
+- I am hungry, find me some place to go eat [italian](cuisine) in [Goa](location)
+- Would you find a [south indian](cuisine) restaurant for me in [Kozhikode](location)?
+- Would you find a [american](cuisine) restaurant for me in [Trivandrum](location)?
+- A place to eat [chinase](cuisine) in [Mysuru](location)
+- I want to eat [italian](cuisine) food in [cochin](location)
+- Please find me a [south-indian](cuisine) restaurant in [madras](location)
+- Quickly get me a [northindian](cuisine) place in [New Delhi](location)
+- Where can i get [south-indina](cuisine) food in [Mangaluru](location)
+<!-- no entity -->
+- I need to find a restaurant
+- Can you find me a good restaurant?
+- Would you be able to search a place to eat?
+- A place to have food
+- Feeling hungry, can you help?
+- I am hungry, find a restaurant
+- Get me some food quickly
+- Pick some place for me to eat quickly
+- Where can i get some food to eat
+- i'm looking for a restaurant
+- how can you help me find a restaurant
+- pick a restaurant for me
+- please find a restaurant for me
+- I want to eat
+- I am feeling hungry
+- I need a new restaurant
+- Suggest me a good restaurant
+- where should i eat?
+- I'm gonna need help finding a restaurant
+- Show me an open restaurant
+- Find a restaurant for me to eat
 
-## lookup:location-tier1
+## lookup:location
+<!-- tier 1 cities -->
 - Bangalore
 - Chennai
 - Delhi
+- Hyderabad
 - Kolkata
 - Mumbai
-- Lucknow
-
-## lookup:location-tier2
+<!-- tier 2 cities -->
 - Agra 
 - Ajmer 
 - Aligarh 
@@ -452,6 +453,7 @@
 - Kollam 
 - Kozhikode 
 - Kurnool 
+- Lucknow
 - Ludhiana 
 - Madurai 
 - Malappuram 
@@ -497,8 +499,8 @@
 
 ## lookup:cuisine
 - indian
-- north indian
-- south indian
+- north-indian
+- south-indian
 - chinese
 - italian
 - american
@@ -508,6 +510,16 @@
 ## synonym:chinese
 - Chinese
 - Chinase
+
+## synonym:south-indian
+- south indian
+- southindian
+- south-indina
+
+## synonym:north-indian
+- north indian
+- northindian
+- north-indina
 
 ## synonym:Bangalore
 - Bengaluru
@@ -543,6 +555,9 @@
 - chennai
 - madras
 - Madras
+
+## synonym:Lucknow
+- Lakhanpur
 
 ## synonym:Mysore
 - mysore

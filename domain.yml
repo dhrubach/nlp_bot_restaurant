@@ -1,7 +1,6 @@
 entities:
   - cuisine
-  - location-tier1
-  - localtion-tier2
+  - location
 
 intents:
   - affirm
