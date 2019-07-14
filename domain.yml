@@ -1,5 +1,6 @@
 entities:
   - cuisine
+  - email
   - location
 
 intents:

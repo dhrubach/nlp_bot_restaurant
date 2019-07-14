@@ -334,6 +334,37 @@
 - thanks for forum link, I'll check it out
 - thanks!
 
+## intent:ask_email
+<!-- with 'email' entity -->
+- can u mail me the information to [abc@abc.com](email)?
+- can u mail to [test@tes.com](email)?
+- email address - [test.some@gmail.co.in](email). Mail this list.
+- email me at [email-123@domina.com](email)
+- mail me [emial@domain.io](email)
+- my email address [email.123-abc@domain.123.com](email)
+- please mail me the list to [123-email@domain.co.in](email)
+- please send me the list to [123@domain.net](email)
+- please send this to [email.123@123.456.com](email)
+- send this to [abc-email@abc.com](email)
+- send to [abc_123-email@abc123.com](email)
+- this is my email address - [email-abc_123@abc.com.edu](email). send me an email.
+- [email1_34-ret@host-name.123.com](email)
+<!-- no entity -->
+- can u share this information over email?
+- can u send me an email?
+- mail me the list
+- email me a list of top 10 restaurants
+- mail me the names of restaurants
+- please send me an email
+- please share this with me
+- send me an email
+- share some more restaurant names with me
+- share this over mail
+- share this information with me over email
+
+## regex:email
+- ([\w\.-]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)
+
 ## intent:ask_restaurant
 <!-- only 'location' entity -->
 - Find me a place to eat in [Bangalore](location)
