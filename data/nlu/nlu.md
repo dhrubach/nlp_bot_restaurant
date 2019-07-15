@@ -338,6 +338,7 @@
 <!-- with 'email' entity -->
 - can u mail me the information to [abc@abc.com](email)?
 - can u mail to [test@tes.com](email)?
+- can u mail me at [test-123.456@dom.123.co.in](email)?
 - email address - [test.some@gmail.co.in](email). Mail this list.
 - email me at [email-123@domina.com](email)
 - mail me [emial@domain.io](email)
@@ -410,7 +411,7 @@
 - Can you find me a good restaurant?
 - Would you be able to search a place to eat?
 - A place to have food
-- Feeling hungry, can you help?
+- Feeling hungry, can you help
 - I am hungry, find a restaurant
 - Get me some food quickly
 - Pick some place for me to eat quickly
