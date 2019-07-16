@@ -1,3 +1,16 @@
 language: "en"
 
 pipeline: "pretrained_embeddings_spacy"
+
+policies:
+  - name: KerasPolicy
+    featurizer:
+    - name: MaxHistoryTrackerFeaturizer
+      max_history: 5
+      state_featurizer:
+        - name: BinarySingleStateFeaturizer
+    epochs: 100
+  - name: FallbackPolicy
+    fallback_action_name: 'action_default_fallback'
+  - name: MemoizationPolicy
+    max_history: 5

@@ -1,13 +1,61 @@
-entities:
-  - cuisine
-  - email
-  - location
-
 intents:
-  - affirm
-  - ask_restaurant
-  - bye
-  - deny
-  - greet
-  - out_of_scope
-  - thank
+- affirm
+- ask_email
+- ask_restaurant
+- bye
+- deny
+- goodbye
+- greet
+- out_of_scope
+- thank
+
+entities:
+- cuisine
+- email
+- location
+
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
+templates:
+  utter_greet:
+  - text: Hi, How are you
+  - text: Hey there! How can i help you today
+  - text: Howdy! Is there anything i can help you with
+  utter_goodbye:
+  - text: goodbye, hope i was of help today
+  - text: Bye-bye
+  - text: Bye!
+  utter_ask_location:
+  - text: In what location?
+  - text: Which city are you looking for?
+  - text: Can you tell me the location you are looking for?
+  utter_thanks_response:
+  - text: You are welcome!
+  - text: You are most welcome! Is there anything else that i can help you with
+  utter_ask_cuisine:
+  - text: what kind of cuisine would you like?
+    buttons:
+    - title: Chinese
+      payload: Chinese
+    - title: Mexican
+      payload: Mexican
+    - title: Italian
+      payload: Italian
+    - title: American
+      payload: American
+    - title: South Indian
+      payload: South Indian
+    - title: North Indian
+      payload: North Indian
+actions:
+- action_restaurant
+- utter_ask_cuisine
+- utter_ask_location
+- utter_goodbye
+- utter_greet
+- utter_thanks_response
