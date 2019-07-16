@@ -530,14 +530,12 @@
 - Warangal
 
 ## lookup:cuisine
-- indian
-- north-indian
-- south-indian
+- american
 - chinese
 - italian
-- american
 - mexican
-- marathi
+- north-indian
+- south-indian
 
 ## synonym:chinese
 - Chinese
@@ -547,11 +545,13 @@
 - south indian
 - southindian
 - south-indina
+- South Indian
 
 ## synonym:north-indian
 - north indian
 - northindian
 - north-indina
+- North Indian
 
 ## synonym:Bangalore
 - Bengaluru
