@@ -572,21 +572,21 @@
 - chinese
 - italian
 - mexican
-- north-indian
-- south-indian
+- north indian
+- south indian
 
 ## synonym:chinese
 - Chinese
 - Chinase
 
-## synonym:south-indian
-- south indian
+## synonym:south indian
+- south-indian
 - southindian
 - south-indina
 - South Indian
 
-## synonym:north-indian
-- north indian
+## synonym:north indian
+- north-indian
 - northindian
 - north-indina
 - North Indian
@@ -599,11 +599,6 @@
 - bangalore
 - bengaluru
 
-## synonym:Chennai
-- chennai
-- madras
-- Madras
-
 ## synonym:Delhi
 - New Delhi
 - NewDelhi
@@ -614,6 +609,11 @@
 - new delhi
 - new Delhi
 
+## synonym:Mumbai
+- Bombay
+- mumbai
+- bombay
+
 ## synonym:Kolkata
 - Calcutta
 - kolkata
@@ -621,26 +621,33 @@
 - calcutta
 - calcuta
 
+## synonym:Chennai
+- chennai
+- madras
+- Madras
+
 ## synonym:Lucknow
 - Lakhanpur
+
+## synonym:Mysore
+- mysore
+- mysuru
+- Mysuru
+
+## synonym Kochi
+- kochi
+- cochin
+- Cochin
 
 ## synonym:Mangalore
 - mangalore
 - mangaluru
 - Mangaluru
 
-## synonym:Mumbai
-- Bombay
-- mumbai
-- bombay
-
-## synonym:Mysore
-- mysore
-- mysuru
-- Mysuru
-- kochi
-- cochin
-- Cochin
+## synonym:Visakhapatnam
+- visakhapatnam
+- Vizag
+- vizag
 
 ## synonym:Thiruvananthapuram
 - thiruvananthapuram
