@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 ## story_01
 * greet
   - utter_greet
@@ -53,4 +54,4 @@
   - utter_happy
 * thank
   - utter_bye
-  
+<!-- markdownlint-restore -->
