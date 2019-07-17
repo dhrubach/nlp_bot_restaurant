@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 ## intent:affirm
 - yes
 - of course
@@ -367,55 +368,73 @@
 - ([\w\.-]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)
 
 ## intent:ask_restaurant
-<!-- only 'location' entity -->
+<!-- only 'location' entity : 33 training samples-->
 - Find me a place to eat in [Bangalore](location)
 - I need a new restaurant in [Bengaluru](location)
+- [Bhopal](location)
 - help me find restaurant in [Bngalore](location)
 - Could you find me a restaurant to eat at [bngalore](location)?
+- [Bhubaneshwar](location)
 - Can you find me a restaurant in [Bombay](location)?
 - Hey, help me find a restaurant in [Mumbai](location)
 - I need to find a restaurant in [Kolkata](location)
+- [Pune](location)
 - Find a restaurant for me in [Calcutta](location)
 - Where should I eat in [Delhi](location)?
+- [Rajkot](location)
 - Suggest me a good restaurant around [New Delhi](location)
 - I need to find this restaurant in [Dilli](location)
 - Show me the closest open restaurant in [Chennai](location)
+- [Indore](location)
+- [Jodhpur](location)
 - Hey help me find a restaurant in [Madras](location)
 - Help me find a restaurant in [Surat](location)
 - Recommend me a restaurant around [Pune](location)
+- [Goa](location)
 - Could you find a restaurant for me in [Belgaum](location)? 
 - Could you find me a restaurant in [Agra](location)? 
 - Pick a restaurant for me, please in [Kochi](location)
+- [Mysuru](location)
 - How can you help me find a restaurant in [Jamshedpur](location)?
+- [Thrissur](location)
 - Can you find a restaurant for me in [Chandigarh](location)?
+- [Lucknow](location)
 - Would you find me a restaurant in [Visakhapatnam](location)??
 - Could you find me a restaurant to eat at [Gurgaon](location)?
-<!-- only 'cuisine' entity -->
+- [NewDelhi](location)
+<!-- only 'cuisine' entity : 26 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant
+- [american](cuisine)
 - i'm looking for a [Chinese](cuisine) restaurant
 - Hey, can you help me with locating a [mexican](cuisine) restaurant
 - i want a [french](cuisine) restaurant
-- What's a good place to eat [marathi](cuisine) food
+- [chinese](cuisine)
+- What's a good place to eat [mexican](cuisine) food
 - Find a restaurant for me where I can eat [north indian](cuisine)
 - Find a restaurant for me to eat [mexican](cuisine)
+- [italian](cuisine)
 - I am hungry, find me some place to go eat [italian](cuisine)
 - Would you find a [south indian](cuisine) restaurant for me?
 - Would you find a [american](cuisine) restaurant
+- [north indian](cuisine)
 - A place to eat [chinase](cuisine)
 - I want to eat [italian](cuisine) food
 - Please find me a [south-indian](cuisine) restaurant
+- [south indian](cuisine)
 - Quickly get me a [northindian](cuisine) place
 - Where can i get [south-indina](cuisine) food?
 - I need to find a restaurant [southindian](cuisine)
+- [mexican](cuisine)
 - A place to have [italian](cuisine) food
-- Suggest me a good [marathi](cuisine) restaurant
+- Suggest me a good [mexican](cuisine) restaurant
 - how can you help me find a [french](cuisine) restaurant?
-<!-- location + cuisine entities -->
+- [italian](cuisine)
+<!-- location + cuisine entities : 15 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
 - Hey, can you help me with locating a [mexican](cuisine) restaurant in [Lakhanpur](location)
 - i want a [french](cuisine) restaurant in [Vizag](location)
-- What's a good place to eat [marathi](cuisine) food in [Bangalore](location)
+- What's a good place to eat [mexican](cuisine) food in [Bangalore](location)
 - Find a restaurant for me where I can eat [north indian](cuisine) in [Jaipur](location)
 - Find a restaurant for me to eat [mexican](cuisine) at [Faridabad](location)
 - I am hungry, find me some place to go eat [italian](cuisine) in [Goa](location)
@@ -426,7 +445,7 @@
 - Please find me a [south-indian](cuisine) restaurant in [madras](location)
 - Quickly get me a [northindian](cuisine) place in [New Delhi](location)
 - Where can i get [south-indina](cuisine) food in [Mangaluru](location)
-<!-- no entity -->
+<!-- no entity : 21 training samples -->
 - I need to find a restaurant
 - Can you find me a good restaurant?
 - Would you be able to search a place to eat?
@@ -637,3 +656,4 @@
 - Trivandrum
 - Travancore
 - travancore
+<!-- markdownlint-restore -->
