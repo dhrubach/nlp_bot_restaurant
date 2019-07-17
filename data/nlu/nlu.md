@@ -195,7 +195,6 @@
 - good morning
 - good afternoon
 
-
 ## intent:out_of_scope
 - I want pizza
 - please help with my ice cream it's dripping
@@ -299,7 +298,7 @@
 - you suck
 - bots are bad
 - i dont like bots
- - do you have a phone number?
+- do you have a phone number?
 - where do you live?
 - how are akela's cats doing?
 - but I just told you that :(
@@ -600,6 +599,11 @@
 - bangalore
 - bengaluru
 
+## synonym:Chennai
+- chennai
+- madras
+- Madras
+
 ## synonym:Delhi
 - New Delhi
 - NewDelhi
@@ -610,11 +614,6 @@
 - new delhi
 - new Delhi
 
-## synonym:Mumbai
-- Bombay
-- mumbai
-- bombay
-
 ## synonym:Kolkata
 - Calcutta
 - kolkata
@@ -622,33 +621,26 @@
 - calcutta
 - calcuta
 
-## synonym:Chennai
-- chennai
-- madras
-- Madras
-
 ## synonym:Lucknow
 - Lakhanpur
-
-## synonym:Mysore
-- mysore
-- mysuru
-- Mysuru
-
-## synonym Kochi
-- kochi
-- cochin
-- Cochin
 
 ## synonym:Mangalore
 - mangalore
 - mangaluru
 - Mangaluru
 
-## synonym:Visakhapatnam
-- visakhapatnam
-- Vizag
-- vizag
+## synonym:Mumbai
+- Bombay
+- mumbai
+- bombay
+
+## synonym:Mysore
+- mysore
+- mysuru
+- Mysuru
+- kochi
+- cochin
+- Cochin
 
 ## synonym:Thiruvananthapuram
 - thiruvananthapuram
