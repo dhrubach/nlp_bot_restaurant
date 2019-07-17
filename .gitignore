@@ -106,3 +106,6 @@ venv.bak/
 # rasa generated files
 *.tar.gz
 errors.json
+
+# IDE settings files
+.vscode/launch.json
