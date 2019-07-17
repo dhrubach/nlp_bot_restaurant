@@ -338,6 +338,7 @@
 <!-- with 'email' entity -->
 - can u mail me the information to [abc@abc.com](email)?
 - can u mail to [test@tes.com](email)?
+- can u mail me at [test-123.456@dom.123.co.in](email)?
 - email address - [test.some@gmail.co.in](email). Mail this list.
 - email me at [email-123@domina.com](email)
 - mail me [emial@domain.io](email)
@@ -389,6 +390,26 @@
 - Can you find a restaurant for me in [Chandigarh](location)?
 - Would you find me a restaurant in [Visakhapatnam](location)??
 - Could you find me a restaurant to eat at [Gurgaon](location)?
+<!-- only 'cuisine' entity -->
+- I'm gonna need help finding a [indian](cuisine) restaurant
+- i'm looking for a [Chinese](cuisine) restaurant
+- Hey, can you help me with locating a [mexican](cuisine) restaurant
+- i want a [french](cuisine) restaurant
+- What's a good place to eat [marathi](cuisine) food
+- Find a restaurant for me where I can eat [north indian](cuisine)
+- Find a restaurant for me to eat [mexican](cuisine)
+- I am hungry, find me some place to go eat [italian](cuisine)
+- Would you find a [south indian](cuisine) restaurant for me?
+- Would you find a [american](cuisine) restaurant
+- A place to eat [chinase](cuisine)
+- I want to eat [italian](cuisine) food
+- Please find me a [south-indian](cuisine) restaurant
+- Quickly get me a [northindian](cuisine) place
+- Where can i get [south-indina](cuisine) food?
+- I need to find a restaurant [southindian](cuisine)
+- A place to have [italian](cuisine) food
+- Suggest me a good [marathi](cuisine) restaurant
+- how can you help me find a [french](cuisine) restaurant?
 <!-- location + cuisine entities -->
 - I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
@@ -410,7 +431,7 @@
 - Can you find me a good restaurant?
 - Would you be able to search a place to eat?
 - A place to have food
-- Feeling hungry, can you help?
+- Feeling hungry, can you help
 - I am hungry, find a restaurant
 - Get me some food quickly
 - Pick some place for me to eat quickly
@@ -529,14 +550,12 @@
 - Warangal
 
 ## lookup:cuisine
-- indian
-- north-indian
-- south-indian
+- american
 - chinese
 - italian
-- american
 - mexican
-- marathi
+- north-indian
+- south-indian
 
 ## synonym:chinese
 - Chinese
@@ -546,11 +565,13 @@
 - south indian
 - southindian
 - south-indina
+- South Indian
 
 ## synonym:north-indian
 - north indian
 - northindian
 - north-indina
+- North Indian
 
 ## synonym:Bangalore
 - Bengaluru

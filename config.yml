@@ -3,7 +3,7 @@ language: "en"
 pipeline: "pretrained_embeddings_spacy"
 
 policies:
-  - name: KerasPolicy
+  - name: "KerasPolicy"
     featurizer:
     - name: MaxHistoryTrackerFeaturizer
       max_history: 5

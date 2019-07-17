@@ -21,41 +21,65 @@ slots:
     type: text
   location:
     type: text
-templates:
-  utter_greet:
-  - text: Hi, How are you
-  - text: Hey there! How can i help you today
-  - text: Howdy! Is there anything i can help you with
-  utter_goodbye:
-  - text: goodbye, hope i was of help today
-  - text: Bye-bye
-  - text: Bye!
-  utter_ask_location:
-  - text: In what location?
-  - text: Which city are you looking for?
-  - text: Can you tell me the location you are looking for?
-  utter_thanks_response:
-  - text: You are welcome!
-  - text: You are most welcome! Is there anything else that i can help you with
-  utter_ask_cuisine:
-  - text: what kind of cuisine would you like?
-    buttons:
-    - title: Chinese
-      payload: Chinese
-    - title: Mexican
-      payload: Mexican
-    - title: Italian
-      payload: Italian
-    - title: American
-      payload: American
-    - title: South Indian
-      payload: South Indian
-    - title: North Indian
-      payload: North Indian
+
 actions:
-- action_restaurant
-- utter_ask_cuisine
-- utter_ask_location
-- utter_goodbye
-- utter_greet
-- utter_thanks_response
+  - action_restaurant
+  - utter_ask_location
+  - utter_ask_cuisine
+  - utter_ask_budget
+  - utter_ask_details
+  - utter_ask_email
+  - utter_bye
+  - utter_confirm_email
+  - utter_did_that_help
+  - utter_greet
+  - utter_happy
+  - utter_thanks_response
+
+templates:
+  utter_bye:
+    - text: See you again!
+    - text: goodbye, hope i was of help today
+    - text: Bye-bye
+    - text: Bye!
+  utter_ask_budget:
+    - text: What would be your preferred budget?
+  utter_ask_cuisine:
+    - text: Which cuisine do you prefer today?
+    - text: what kind of cuisine would you like?
+      buttons:
+      - title: Chinese
+        payload: Chinese
+      - title: Mexican
+        payload: Mexican
+      - title: Italian
+        payload: Italian
+      - title: American
+        payload: American
+      - title: South Indian
+        payload: South Indian
+      - title: North Indian
+        payload: North Indian
+  utter_ask_details:
+    - text: Would you like me to send an email with details of restaurants?
+  utter_ask_email:
+    - text: Please provide your email id.
+  utter_ask_location:
+    - text: Which city would you like to get the details of?
+    - text: In what location?
+    - text: Which city are you looking for?
+    - text: Can you tell me the location you are looking for?
+  utter_confirm_email:
+    - text: An email has been sent to you.
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_greet:
+    - text: Hey! How are you?
+    - text: Hi, How are you
+    - text: Hey there! How can i help you today
+    - text: Howdy! Is there anything i can help you with
+  utter_happy:
+    - text: Great carry on!
+  utter_thanks_response:
+    - text: You are welcome!
+    - text: You are most welcome! Is there anything else that i can help you with    
