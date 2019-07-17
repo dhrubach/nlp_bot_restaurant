@@ -7,7 +7,8 @@
 * ask_restaurant{"location": "Bangalore"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
-  - utter_ask_details
+  - action_restaurant
+  - utter_ask_details  
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
@@ -23,6 +24,7 @@
 * ask_restaurant{"location": "Bangalore"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_restaurant
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -35,6 +37,7 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "Mumbai", "cuisine": "chinese"}
+  - action_restaurant
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -47,6 +50,7 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_restaurant
   - utter_ask_details
 * deny
   - utter_did_that_help
