@@ -34,6 +34,8 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "Mumbai", "cuisine": "chinese"}
+  - utter_ask_budget
+* ask_budget{"budget": "300 to 700"}
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -46,6 +48,8 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - utter_ask_budget
+* ask_budget{"budget": "300 to 700"}
   - utter_ask_details
 * deny
   - utter_did_that_help
