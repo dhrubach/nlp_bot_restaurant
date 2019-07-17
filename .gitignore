@@ -109,3 +109,4 @@ errors.json
 
 # IDE settings files
 .vscode/launch.json
+rasa_core.log
