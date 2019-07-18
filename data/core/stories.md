@@ -5,6 +5,7 @@
 * ask_restaurant
   - utter_ask_location
 * ask_restaurant{"location": "Bangalore"}
+  - action_location_valid  
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
   - action_restaurant
@@ -22,6 +23,7 @@
 * ask_restaurant
   - utter_ask_location
 * ask_restaurant{"location": "Bangalore"}
+  - action_location_valid  
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
   - action_restaurant
@@ -37,6 +39,7 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "Mumbai", "cuisine": "chinese"}
+  - action_location_valid  
   - action_restaurant
   - utter_ask_budget
 * ask_budget{"budget": "300 to 700"}
@@ -52,6 +55,7 @@
 * greet
   - utter_greet
 * ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_location_valid  
   - action_restaurant
   - utter_ask_budget
 * ask_budget{"budget": "300 to 700"}

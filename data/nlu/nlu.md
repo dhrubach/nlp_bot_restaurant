@@ -334,6 +334,11 @@
 - thanks for forum link, I'll check it out
 - thanks!
 
+## intent:ask_budget
+ - I want to eat at a place between 300 and 700
+ - I am fine with an expensive place
+ - I am looking for a dinner place at less than 300
+
 ## intent:ask_email
 <!-- with 'email' entity -->
 - can u mail me the information to [abc@abc.com](email)?

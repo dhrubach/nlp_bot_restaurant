@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import logging
 import json
 
+from rasa.constants import DEFAULT_DATA_PATH
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 
@@ -124,9 +125,43 @@ class ActionSearchRestaurants(Action):
                         {
                             "name": restaurant["restaurant"]["name"],
                             "address": restaurant["restaurant"]["location"]["address"],
-                            "avg_cost_for_2": restaurant["restaurant"]["average_cost_for_two"],
-                            "rating": restaurant["restaurant"]["user_rating"]["aggregate_rating"],
+                            "avg_cost_for_2": restaurant["restaurant"][
+                                "average_cost_for_two"
+                            ],
+                            "rating": restaurant["restaurant"]["user_rating"][
+                                "aggregate_rating"
+                            ],
                         }
                     )
 
         return restaurants_found
+
+
+"""
+    Custom action to validate input location
+"""
+class ActionValidateLocation(Action):
+    def name(self):
+        return "action_location_valid"
+
+    def run(self, dispatcher, tracker, domain):
+
+        location = tracker.get_slot("location")
+
+        if not location:
+            dispatcher.utter_template("utter_ask_location", tracker)
+        else:
+            filepath = DEFAULT_DATA_PATH + "/cities.json"
+            
+            with open(filepath) as cities_file:
+
+                data = json.load(cities_file)
+                
+                if data is not None:
+                    tier1_cities = data["data"]["tier1"]
+                    tier2_cities = data["data"]["tier2"]
+
+                    if location not in tier1_cities and location not in tier2_cities:
+                        dispatcher.utter_template("utter_location_invalid", tracker)
+
+        return [SlotSet("location", location)]

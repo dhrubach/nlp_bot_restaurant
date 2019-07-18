@@ -1,5 +1,6 @@
 intents:
 - affirm
+- ask_budget
 - ask_email
 - ask_restaurant
 - bye
@@ -24,6 +25,7 @@ slots:
 
 actions:
   - action_restaurant
+  - action_location_valid
   - utter_ask_location
   - utter_ask_cuisine
   - utter_ask_budget
@@ -87,6 +89,8 @@ templates:
     - text: Howdy! Is there anything i can help you with
   utter_happy:
     - text: Great carry on!
+  utter_location_invalid:
+    - text: Sorry. We did not serve the requested location.    
   utter_thanks_response:
     - text: You are welcome!
     - text: You are most welcome! Is there anything else that i can help you with    
