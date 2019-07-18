@@ -18,24 +18,40 @@ entities:
 slots:
   cuisine:
     type: text
+  cuisine_validity:
+    type: categorical
+    values:
+    - valid
+    - invalid      
   email:
     type: text
   location:
     type: text
+  location_validity:
+    type: categorical
+    values:
+    - valid
+    - invalid
 
 actions:
   - action_restaurant
+  - action_cuisine_valid
   - action_location_valid
   - utter_ask_location
+  - utter_ask_location_retry
   - utter_ask_cuisine
+  - utter_ask_cuisine_retry
   - utter_ask_budget
   - utter_ask_details
   - utter_ask_email
   - utter_bye
   - utter_confirm_email
+  - utter_cuisine_invalid
+  - utter_deny
   - utter_did_that_help
   - utter_greet
   - utter_happy
+  - utter_location_invalid
   - utter_thanks_response
 
 templates:
@@ -69,6 +85,9 @@ templates:
         payload: South Indian
       - title: North Indian
         payload: North Indian
+  utter_ask_cuisine_retry:
+    - text: Will you like to search for some other cuisine?
+    - text: Can I help you look for some other cuisine today?    
   utter_ask_details:
   - text: Would you like me to send an email with details of restaurants?
   utter_ask_email:
@@ -78,10 +97,17 @@ templates:
     - text: In what location?
     - text: Which city are you looking for?
     - text: Can you tell me the location you are looking for?
+  utter_ask_location_retry:
+    - text: Will you like to search for some other location?
+    - text: Can I help you look for a restaurant at some other location?    
   utter_confirm_email:
     - text: An email has been sent to you.
+  utter_cuisine_invalid:
+    - text: Sorry. We do not serve the requested cuisine - {cuisine}.    
   utter_did_that_help:
     - text: Did that help you?
+  utter_deny:
+    - text: Sorry. Hope to serve you better next time.    
   utter_greet:
     - text: Hey! How are you?
     - text: Hi, How are you
@@ -90,7 +116,7 @@ templates:
   utter_happy:
     - text: Great carry on!
   utter_location_invalid:
-    - text: Sorry. We did not serve the requested location.    
+    - text: Sorry. We do not serve at the requested location - {location}.
   utter_thanks_response:
     - text: You are welcome!
     - text: You are most welcome! Is there anything else that i can help you with    

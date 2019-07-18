@@ -13,11 +13,13 @@ from zomato.zomato_api import Zomato
 
 
 logger = logging.getLogger("__name__")
-user_key = ""
+user_key = "826e19171cb67de6880a5584b5c025c9"
 config = {"user_key": user_key}
 _zomato = Zomato(config)
 
 
+""" Custom action to fetch list of restaurants
+"""
 class ActionSearchRestaurants(Action):
     def name(self):
         return "action_restaurant"
@@ -87,7 +89,7 @@ class ActionSearchRestaurants(Action):
                                 + restaurant["name"]
                                 + " in "
                                 + restaurant["address"]
-                                + "with average rating "
+                                + " with average rating "
                                 + restaurant["rating"]
                                 + "\n"
                             )
@@ -125,20 +127,15 @@ class ActionSearchRestaurants(Action):
                         {
                             "name": restaurant["restaurant"]["name"],
                             "address": restaurant["restaurant"]["location"]["address"],
-                            "avg_cost_for_2": restaurant["restaurant"][
-                                "average_cost_for_two"
-                            ],
-                            "rating": restaurant["restaurant"]["user_rating"][
-                                "aggregate_rating"
-                            ],
+                            "avg_cost_for_2": restaurant["restaurant"]["average_cost_for_two"],
+                            "rating": restaurant["restaurant"]["user_rating"]["aggregate_rating"],
                         }
                     )
 
         return restaurants_found
 
 
-"""
-    Custom action to validate input location
+""" Custom action to validate input location
 """
 class ActionValidateLocation(Action):
     def name(self):
@@ -147,21 +144,62 @@ class ActionValidateLocation(Action):
     def run(self, dispatcher, tracker, domain):
 
         location = tracker.get_slot("location")
+        location_validity = "valid"
 
         if not location:
             dispatcher.utter_template("utter_ask_location", tracker)
+            location_validity = "invalid"
         else:
             filepath = DEFAULT_DATA_PATH + "/cities.json"
-            
+
             with open(filepath) as cities_file:
 
                 data = json.load(cities_file)
-                
+
                 if data is not None:
                     tier1_cities = data["data"]["tier1"]
                     tier2_cities = data["data"]["tier2"]
 
-                    if location not in tier1_cities and location not in tier2_cities:
-                        dispatcher.utter_template("utter_location_invalid", tracker)
+                    tier1_cities_lower = [city.lower() for city in tier1_cities]
+                    tier2_cities_lower = [city.lower() for city in tier2_cities]
 
-        return [SlotSet("location", location)]
+                    location_validity = (
+                        "invalid"
+                        if location.lower() not in tier1_cities_lower and location.lower() not in tier2_cities_lower
+                        else "valid"
+                    )
+                else:
+                    location_validity = "invalid"
+
+        return [SlotSet("location_validity", location_validity)]
+
+
+""" Custom action to validate input cuisine
+"""
+class ActionValidateCuisine(Action):
+    def name(self):
+        return "action_cuisine_valid"
+
+    def run(self, dispatcher, tracker, domain):
+
+        cuisine = tracker.get_slot("cuisine")
+        cuisine_validity = "valid"
+
+        if not cuisine:
+            dispatcher.utter_template("utter_ask_cuisine", tracker)
+            cuisine_validity = "invalid"
+        else:
+            supported_cuisines = [
+                "american",
+                "chinese",
+                "italian",
+                "mexican",
+                "north indian",
+                "south indian",
+            ]
+
+            cuisine_validity = (
+                "invalid" if cuisine.lower() not in supported_cuisines else "valid"
+            )
+
+        return [SlotSet("cuisine_validity", cuisine_validity)]
