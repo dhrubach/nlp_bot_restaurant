@@ -13,7 +13,7 @@ from zomato.zomato_api import Zomato
 
 
 logger = logging.getLogger("__name__")
-user_key = "826e19171cb67de6880a5584b5c025c9"
+user_key = ""
 config = {"user_key": user_key}
 _zomato = Zomato(config)
 
