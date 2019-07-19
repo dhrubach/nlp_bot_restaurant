@@ -380,6 +380,10 @@
 - Could you find me a restaurant to eat at [bngalore](location)?
 - [Bhubaneshwar](location)
 - Can you find me a restaurant in [Bombay](location)?
+- [Amritsar](location)
+- [erode](location)
+- [Jammu](location)
+- [Kurnool](location)
 - Hey, help me find a restaurant in [Mumbai](location)
 - I need to find a restaurant in [Kolkata](location)
 - [Pune](location)
@@ -396,6 +400,11 @@
 - Recommend me a restaurant around [Pune](location)
 - [Goa](location)
 - Could you find a restaurant for me in [Belgaum](location)? 
+- [Chandigarh](location)
+- [Rajahmundry](location)
+- [Ujjain](location)
+- [vadodara](location)
+- [Srinagar](location)
 - Could you find me a restaurant in [Agra](location)? 
 - Pick a restaurant for me, please in [Kochi](location)
 - [Mysuru](location)
@@ -406,6 +415,13 @@
 - Would you find me a restaurant in [Visakhapatnam](location)??
 - Could you find me a restaurant to eat at [Gurgaon](location)?
 - [NewDelhi](location)
+- [Surat](location)
+- [Jamshedpur](location)
+- [Rourkela](location)
+- [Vijayawada](location)
+- [Ajmer](location)
+- [Allahabad](location)
+- [raurkela](location)
 <!-- only 'cuisine' entity : 26 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant
 - [american](cuisine)
@@ -660,4 +676,54 @@
 - Trivandrum
 - Travancore
 - travancore
+
+## synonym:Vadodara
+- vadodara
+- Vadodra
+- vadodra
+
+## synonym:Jamshedpur
+- jamshedpur
+- Jamsedpur
+- jamsedpur
+
+## synonym:Rajahmundry
+- rajahmundry
+- Rajahmundri
+- rajahmundri
+- Rajamundry
+- rajamundry
+- Rajamundri
+- rajamundri
+
+## synonym:Rourkela
+- rourkela
+- Raurkela
+- raurkela
+
+## synonym:Amritsar
+- amritsar
+- Amratsar
+- amratsar
+
+## synonym:Chandigarh
+- chandigarh
+- Chandighar
+- chandighar
+
+## synonym:Prayagraj
+- prayagraj
+- Allahabad
+- allahabad
+
+## synonym:Nashik
+- nashik
+- Nasik
+- nasik
+
+## synonym:Pondicherry
+- pondicherry
+- puducherry
+- Puducherry
+
 <!-- markdownlint-restore -->
