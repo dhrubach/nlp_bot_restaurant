@@ -85,11 +85,10 @@ class ActionSearchRestaurants(Action):
                         for restaurant in restaurants_found:
                             response_message = (
                                 response_message
-                                + "Found "
                                 + restaurant["name"]
                                 + " in "
                                 + restaurant["address"]
-                                + " with average rating "
+                                + " has been rated "
                                 + restaurant["rating"]
                                 + "\n"
                             )
