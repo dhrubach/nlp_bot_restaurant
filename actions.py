@@ -7,7 +7,7 @@ import json
 
 from rasa.constants import DEFAULT_DATA_PATH
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import AllSlotsReset, SlotSet, Restarted
 
 from zomato.zomato_api import Zomato
 
@@ -116,8 +116,6 @@ class ActionSearchRestaurants(Action):
                         else:
                             search_validity = "invalid"
                     else:
-                        logger.info('incoming location - ' + location)
-                        logger.info('found location - ' + city_name)
                         search_validity = "invalid"
                 else:
                     search_validity = "invalid"                            
@@ -186,15 +184,13 @@ class ActionSearchRestaurants(Action):
             """
             rangeMin = 0
             rangeMax = 9999
-        logger.info('original list')
-        logger.info(restaurant_list)
+
         for restaurant in restaurant_list:
             avg_cost = int(restaurant["avg_cost_for_2"])
 
             if avg_cost >= rangeMin and avg_cost <= rangeMax:
                 filtered_restaurant_list.append(restaurant)
 
-        logger.info(filtered_restaurant_list)
         return filtered_restaurant_list
 
 
@@ -267,3 +263,20 @@ class ActionValidateCuisine(Action):
             )
 
         return [SlotSet("cuisine_validity", cuisine_validity)]
+
+
+class ActionRestarted(Action): 	
+	def name(self):
+		return 'action_restart'
+
+	def run(self, dispatcher, tracker, domain):
+		return[Restarted()] 
+
+
+class ActionSlotReset(Action): 
+	def name(self): 
+		return 'action_slot_reset' 
+
+	def run(self, dispatcher, tracker, domain): 
+		return[AllSlotsReset()]
+       

@@ -43,6 +43,8 @@ slots:
 
 actions:
   - action_restaurant
+  - action_restart
+  - action_slot_reset
   - action_cuisine_valid
   - action_location_valid
   - utter_ask_location
