@@ -14,6 +14,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -44,6 +45,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -129,6 +131,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -148,6 +151,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "701"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -167,6 +171,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -195,6 +200,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -235,6 +241,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -279,6 +286,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}  
   - utter_ask_details
 * affirm
   - utter_ask_email

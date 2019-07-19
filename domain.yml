@@ -35,6 +35,11 @@ slots:
     values:
     - valid
     - invalid
+  search_validity:
+    type: categorical
+    values:
+    - valid
+    - invalid
 
 actions:
   - action_restaurant
@@ -55,6 +60,7 @@ actions:
   - utter_greet
   - utter_happy
   - utter_location_invalid
+  - utter_search_invalid
   - utter_thanks_response
 
 templates:
@@ -73,7 +79,6 @@ templates:
       - title: More than Rs. 700
         payload: '/ask_budget{"budget": "701"}'
   utter_ask_cuisine:
-    - text: Which cuisine do you prefer today?
     - text: what kind of cuisine would you like?
       buttons:
       - title: Chinese
@@ -120,6 +125,8 @@ templates:
     - text: Great carry on!
   utter_location_invalid:
     - text: Sorry. We do not serve at the requested location - {location}.
+  utter_search_invalid:
+    - text: Sorry. We do not have any restaurants which match the requested criterions.    
   utter_thanks_response:
     - text: You are welcome!
     - text: You are most welcome! Is there anything else that i can help you with    
