@@ -137,8 +137,6 @@ class ActionSearchRestaurants(Action):
                         else:
                             search_validity = "invalid"
                     else:
-                        logger.info('incoming location - ' + location)
-                        logger.info('found location - ' + city_name)
                         search_validity = "invalid"
                 else:
                     search_validity = "invalid"                            
@@ -207,15 +205,13 @@ class ActionSearchRestaurants(Action):
             """
             rangeMin = 0
             rangeMax = 9999
-        logger.info('original list')
-        logger.info(restaurant_list)
+
         for restaurant in restaurant_list:
             avg_cost = int(restaurant["avg_cost_for_2"])
 
             if avg_cost >= rangeMin and avg_cost <= rangeMax:
                 filtered_restaurant_list.append(restaurant)
 
-        logger.info(filtered_restaurant_list)
         return filtered_restaurant_list
 
 
