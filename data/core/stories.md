@@ -329,6 +329,38 @@
   - utter_bye
   - action_restart
 
+## story_13_start_question_location_cuisine_budget_valid_no_email
+* ask_restaurant{"cuisine":"indian","location":"Mysore"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget":"701"}
+  - action_restaurant
+  - utter_ask_details
+* deny
+  - utter_deny
+* thank
+  - utter_bye
+
+## story_14_start_question_location_cuisine_budget_valid_with_email
+* ask_restaurant{"cuisine":"indian","location":"Mysore"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget":"701"}
+  - action_restaurant
+  - utter_ask_details
+* affirm
+  - utter_ask_email
+* ask_email{"email": "abc@abc.com"}
+  - utter_confirm_email
+* thank
+  - utter_bye
+
 ## story_15_greet_drop
 * greet
   - utter_greet
@@ -498,14 +530,11 @@
 * ask_restaurant
   - utter_ask_location
 * out_of_scope
-  - utter_location_invalid
-  - utter_ask_location_retry
-* out_of_scope
   - utter_bye
   - action_restart
 
 ## story_28_location_invalid_out_of_scope
-* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
+* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
   - action_location_valid
   - slot{"location_validity" : "invalid"}
   - utter_location_invalid
