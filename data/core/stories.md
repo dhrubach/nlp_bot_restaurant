@@ -488,12 +488,6 @@
   - action_location_valid
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
-* ask_restaurant{"cuisine": "Chinese"}
-  - action_cuisine_valid
-  - slot{"cuisine_validity" : "valid"}  
-  - action_restaurant
-  - slot{"search_validity" : "valid"}  
-  - utter_ask_details
 * out_of_scope
   - utter_bye
   - action_restart
