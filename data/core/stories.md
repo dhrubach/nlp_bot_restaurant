@@ -10,7 +10,9 @@
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
-  - slot{"cuisine_validity" : "valid"}  
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "299"}
   - action_restaurant
   - utter_ask_details
 * affirm
@@ -39,6 +41,8 @@
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}  
+  - utter_ask_budget
+* ask_budget{"budget": "299"}
   - action_restaurant
   - utter_ask_details
 * affirm
@@ -81,6 +85,8 @@
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}  
+  - utter_ask_budget
+* ask_budget{"budget": "299"}
   - action_restaurant
   - utter_ask_details
 * affirm
@@ -120,6 +126,8 @@
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "299"}
   - action_restaurant
   - utter_ask_details
 * deny
@@ -137,9 +145,9 @@
   - slot{"location_validity" : "valid"}  
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}
-  - action_restaurant
   - utter_ask_budget
-* ask_budget{"budget": "300 to 700"}
+* ask_budget{"budget": "701"}
+  - action_restaurant
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -156,9 +164,9 @@
   - slot{"location_validity" : "valid"}  
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}
-  - action_restaurant
   - utter_ask_budget
-* ask_budget{"budget": "300 to 700"}
+* ask_budget{"budget": "300"}
+  - action_restaurant
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -184,6 +192,8 @@
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}  
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
   - action_restaurant
   - utter_ask_details
 * affirm
@@ -222,6 +232,8 @@
 * ask_restaurant{"cuisine": "Chinese"}
   - action_cuisine_valid
   - slot{"cuisine_validity" : "valid"}  
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
   - action_restaurant
   - utter_ask_details
 * affirm
@@ -264,6 +276,8 @@
 * ask_restaurant{"location": "Bangalore"}
   - action_location_valid
   - slot{"location_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
   - action_restaurant
   - utter_ask_details
 * affirm

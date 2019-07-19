@@ -11,11 +11,14 @@ intents:
 - thank
 
 entities:
+- budget  
 - cuisine
 - email
 - location
 
 slots:
+  budget:
+    type: text
   cuisine:
     type: text
   cuisine_validity:
@@ -63,12 +66,12 @@ templates:
   utter_ask_budget:
     - text: What would be your preferred budget?
       buttons:
-      - title: Lesser than 300
-        payload: Lesser than 300
+      - title: Lesser than Rs. 300
+        payload: '/ask_budget{"budget": "299"}'
       - title: Rs. 300 to 700
-        payload: Rs. 300 to 700
-      - title: More than 700
-        payload: More than 700
+        payload: '/ask_budget{"budget": "700"}'
+      - title: More than Rs. 700
+        payload: '/ask_budget{"budget": "701"}'
   utter_ask_cuisine:
     - text: Which cuisine do you prefer today?
     - text: what kind of cuisine would you like?
