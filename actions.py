@@ -29,7 +29,6 @@ class ActionSearchRestaurants(Action):
     def run(self, dispatcher, tracker, domain):
 
         response_message = ""
-        email_message = ""
         search_validity = "valid"
 
         budget = tracker.get_slot("budget")
@@ -99,44 +98,28 @@ class ActionSearchRestaurants(Action):
 
                         if len(restaurants_found) > 0:
                             restaurant_filtered_budget = self.filter_restaurant_by_budget(budget, restaurants_found)
-                            number_of_records = 10
+                            number_of_records = 5
 
-                            if len(restaurant_filtered_budget) < 10:
+                            if len(restaurant_filtered_budget) < 5:
                                 number_of_records = len(restaurant_filtered_budget)
 
                             for index in range(0, number_of_records):
                                 restaurant = restaurant_filtered_budget[index]
-                                if index < 5:
-                                    response_message = (
-                                        response_message
-                                        + restaurant["name"]
-                                        + " in "
-                                        + restaurant["address"] 
-                                        + " has been rated "
-                                        + restaurant["rating"]
-                                        + " out of 5"
-                                        + "\n"
-                                    )
-
-                                email_message = (
-                                    email_message
-                                    + "\n   "
-                                    + str(index + 1)
-                                    + ". "
+                                response_message = (
+                                    response_message
                                     + restaurant["name"]
                                     + " in "
                                     + restaurant["address"] 
                                     + " has been rated "
                                     + restaurant["rating"]
-                                    + " out of 5. "
-                                    + "Average cost for 2 : "
-                                    + str(restaurant["avg_cost_for_2"])
+                                    + " out of 5"
                                     + "\n"
                                 )
-
                         else:
                             search_validity = "invalid"
                     else:
+                        logger.info('incoming location - ' + location)
+                        logger.info('found location - ' + city_name)
                         search_validity = "invalid"
                 else:
                     search_validity = "invalid"                            
@@ -148,7 +131,7 @@ class ActionSearchRestaurants(Action):
         else:            
             dispatcher.utter_message(response_message)
 
-        return [SlotSet("search_validity", search_validity), SlotSet("email_message", email_message)]
+        return [SlotSet("search_validity", search_validity)]
 
     def search_restaurant(
         self, location="", location_details={}, cuisine_list=[]
@@ -205,13 +188,15 @@ class ActionSearchRestaurants(Action):
             """
             rangeMin = 0
             rangeMax = 9999
-
+        logger.info('original list')
+        logger.info(restaurant_list)
         for restaurant in restaurant_list:
             avg_cost = int(restaurant["avg_cost_for_2"])
 
             if avg_cost >= rangeMin and avg_cost <= rangeMax:
                 filtered_restaurant_list.append(restaurant)
 
+        logger.info(filtered_restaurant_list)
         return filtered_restaurant_list
 
 
