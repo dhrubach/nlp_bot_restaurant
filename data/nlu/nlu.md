@@ -372,7 +372,7 @@
 - ([\w\.-]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)
 
 ## intent:ask_restaurant
-<!-- only 'location' entity : 33 training samples-->
+<!-- only 'location' entity : 54 training samples-->
 - Find me a place to eat in [Bangalore](location)
 - I need a new restaurant in [Bengaluru](location)
 - [Bhopal](location)
@@ -387,11 +387,14 @@
 - Hey, help me find a restaurant in [Mumbai](location)
 - I need to find a restaurant in [Kolkata](location)
 - [Pune](location)
+- [Cyberabad](location)
+- [calcuta](location)
 - Find a restaurant for me in [Calcutta](location)
 - Where should I eat in [Delhi](location)?
-- [Rajkot](location)
+- [Delhi NCR](location)
 - Suggest me a good restaurant around [New Delhi](location)
-- I need to find this restaurant in [Dilli](location)
+- I need to find this restaurant in [Delhi](location)
+- [Dilli](location)
 - Show me the closest open restaurant in [Chennai](location)
 - [Indore](location)
 - [Jodhpur](location)
@@ -403,6 +406,7 @@
 - [Chandigarh](location)
 - [Rajahmundry](location)
 - [Ujjain](location)
+- Could you find a restaurant for me in [Bengaluru](location)? 
 - [vadodara](location)
 - [Srinagar](location)
 - Could you find me a restaurant in [Agra](location)? 
@@ -417,6 +421,7 @@
 - [NewDelhi](location)
 - [Surat](location)
 - [Jamshedpur](location)
+- Would you find me a restaurant in [calcutta](location)??
 - [Rourkela](location)
 - [Vijayawada](location)
 - [Ajmer](location)
@@ -449,7 +454,7 @@
 - Suggest me a good [mexican](cuisine) restaurant
 - how can you help me find a [french](cuisine) restaurant?
 - [italian](cuisine)
-<!-- location + cuisine entities : 15 training samples -->
+<!-- location + cuisine entities : 17 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
 - Hey, can you help me with locating a [mexican](cuisine) restaurant in [Lakhanpur](location)
@@ -461,10 +466,12 @@
 - Would you find a [south indian](cuisine) restaurant for me in [Kozhikode](location)?
 - Would you find a [american](cuisine) restaurant for me in [Trivandrum](location)?
 - A place to eat [chinase](cuisine) in [Mysuru](location)
+- Hey, can you help me with locating a [north indian](cuisine) restaurant in [calcuta](location)
 - I want to eat [italian](cuisine) food in [cochin](location)
 - Please find me a [south-indian](cuisine) restaurant in [madras](location)
 - Quickly get me a [northindian](cuisine) place in [New Delhi](location)
 - Where can i get [south-indina](cuisine) food in [Mangaluru](location)
+- i'm looking for a [Chinese](cuisine) restaurant in [cyberabad](location)
 <!-- no entity : 21 training samples -->
 - I need to find a restaurant
 - Can you find me a good restaurant?
@@ -612,16 +619,17 @@
 - north-indina
 - North Indian
 
-## synonym:Bangalore
-- Bengaluru
+## synonym:Bengaluru
+- Bangalore
 - bngalore
 - bengalluru
 - Bangalor
 - bangalore
 - bengaluru
 
-## synonym:Delhi
+## synonym:Delhi NCR
 - New Delhi
+- Delhi
 - NewDelhi
 - Dilli
 - Dellhi
@@ -646,6 +654,13 @@
 - chennai
 - madras
 - Madras
+
+## synonym:Hyderabad
+- hyderabad
+- Secunderabad
+- secunderabad
+- cyberabad
+- Cyberabad
 
 ## synonym:Lucknow
 - Lakhanpur
