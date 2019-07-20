@@ -14,11 +14,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -47,11 +48,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -95,11 +97,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -140,7 +143,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}  
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -161,11 +164,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "701"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -182,7 +186,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}  
   - utter_ask_details
 * deny
   - utter_did_that_help
@@ -214,11 +218,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -258,11 +263,12 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -295,7 +301,7 @@
   - utter_ask_budget
 * ask_budget{"budget":"701"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * deny
   - utter_deny
@@ -312,11 +318,12 @@
   - utter_ask_budget
 * ask_budget{"budget":"701"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * affirm
   - utter_ask_email
 * ask_email{"email": "abc@abc.com"}
+  - action_send_email
   - utter_confirm_email
 * thank
   - utter_bye
@@ -367,7 +374,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * bye
   - utter_bye
@@ -462,7 +469,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * out_of_scope
   - utter_bye
@@ -532,7 +539,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * out_of_scope
   - utter_bye
@@ -596,7 +603,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "700"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * out_of_scope
   - utter_bye
@@ -611,7 +618,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}  
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * out_of_scope
   - utter_bye
@@ -636,7 +643,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * bye
   - utter_bye
@@ -663,7 +670,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
-  - slot{"search_validity" : "valid"}
+  - slot{"search_validity" : "valid", "email_message": ""}
   - utter_ask_details
 * bye
   - utter_bye

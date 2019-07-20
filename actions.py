@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 
 import logging
 import json
+import smtplib
 
+from email.message import EmailMessage
 from rasa.constants import DEFAULT_DATA_PATH
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import AllSlotsReset, SlotSet, Restarted
@@ -27,6 +29,7 @@ class ActionSearchRestaurants(Action):
     def run(self, dispatcher, tracker, domain):
 
         response_message = ""
+        email_message = ""
         search_validity = "valid"
 
         budget = tracker.get_slot("budget")
@@ -96,23 +99,41 @@ class ActionSearchRestaurants(Action):
 
                         if len(restaurants_found) > 0:
                             restaurant_filtered_budget = self.filter_restaurant_by_budget(budget, restaurants_found)
-                            number_of_records = 5
+                            number_of_records = 10
 
-                            if len(restaurant_filtered_budget) < 5:
+                            if len(restaurant_filtered_budget) < 10:
                                 number_of_records = len(restaurant_filtered_budget)
 
                             for index in range(0, number_of_records):
                                 restaurant = restaurant_filtered_budget[index]
-                                response_message = (
-                                    response_message
+                                if index < 5:
+                                    response_message = (
+                                        response_message
+                                        + restaurant["name"]
+                                        + " in "
+                                        + restaurant["address"] 
+                                        + " has been rated "
+                                        + restaurant["rating"]
+                                        + " out of 5"
+                                        + "\n"
+                                    )
+
+                                email_message = (
+                                    email_message
+                                    + "\n   "
+                                    + str(index + 1)
+                                    + ". "
                                     + restaurant["name"]
                                     + " in "
                                     + restaurant["address"] 
                                     + " has been rated "
                                     + restaurant["rating"]
-                                    + " out of 5"
+                                    + " out of 5. "
+                                    + "Average cost for 2 : "
+                                    + str(restaurant["avg_cost_for_2"])
                                     + "\n"
                                 )
+
                         else:
                             search_validity = "invalid"
                     else:
@@ -127,7 +148,7 @@ class ActionSearchRestaurants(Action):
         else:            
             dispatcher.utter_message(response_message)
 
-        return [SlotSet("search_validity", search_validity)]
+        return [SlotSet("search_validity", search_validity), SlotSet("email_message", email_message)]
 
     def search_restaurant(
         self, location="", location_details={}, cuisine_list=[]
@@ -278,4 +299,55 @@ class ActionSlotReset(Action):
 		return 'action_slot_reset' 
 
 	def run(self, dispatcher, tracker, domain): 
-		return[AllSlotsReset()]       
+		return[AllSlotsReset()]
+
+
+""" Custom action to send an email
+"""
+class ActionSendEmail(Action):
+
+    def name(self):
+        return "action_send_email"
+
+    def run(self, dispatcher, tracker, domain):
+
+        location = tracker.get_slot("location")
+        email_id = tracker.get_slot("email")
+        email_message = tracker.get_slot("email_message")
+
+        """
+            Create an email message
+        """
+        message = EmailMessage()
+
+        message.set_content(email_message)
+        message['Subject'] = "Restaurant Bot | List of Restaurants in {0}".format(location)
+
+        """
+            Read SMTP configuration
+        """
+        smtp_config = {}
+        filepath = DEFAULT_DATA_PATH + "/smtpconfig.txt"
+
+        with open(filepath) as mail_file:
+            for line in mail_file:
+                name, var = line.partition("=")[::2]
+                smtp_config[name.strip()] = var.strip()
+		
+        """
+            Send email to the user
+        """
+        try:
+            s = smtplib.SMTP_SSL(host=smtp_config["smtpserver_host"], port=smtp_config["smtpserver_port"])
+            s.login(smtp_config["username"], smtp_config["password"])
+
+            message['From'] = smtp_config["from_email"]
+            message['To'] = email_id
+
+            s.send_message(message)
+            s.quit()
+        except Exception as e:
+            print("failed to send an email")
+            print(e)
+
+        return [AllSlotsReset()]

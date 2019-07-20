@@ -28,6 +28,8 @@ slots:
     - invalid      
   email:
     type: text
+  email_message:
+    type: text    
   location:
     type: text
   location_validity:
@@ -42,11 +44,12 @@ slots:
     - invalid
 
 actions:
-  - action_restaurant
-  - action_restart
-  - action_slot_reset
   - action_cuisine_valid
   - action_location_valid
+  - action_restaurant
+  - action_restart
+  - action_send_email
+  - action_slot_reset
   - utter_ask_location
   - utter_ask_location_retry
   - utter_ask_cuisine
