@@ -7,7 +7,7 @@ import json
 
 from rasa.constants import DEFAULT_DATA_PATH
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import AllSlotsReset, SlotSet, Restarted
 
 from zomato.zomato_api import Zomato
 
@@ -26,14 +26,16 @@ class ActionSearchRestaurants(Action):
 
     def run(self, dispatcher, tracker, domain):
 
-        restaurants_found = []
         response_message = ""
+        search_validity = "valid"
 
+        budget = tracker.get_slot("budget")
         location = tracker.get_slot("location")
         cuisine = tracker.get_slot("cuisine")
 
+        
         if not location:
-            dispatcher.utter_template("utter_ask_location", tracker)
+            search_validity = "invalid"
         else:
             """
 				retrieve location details
@@ -49,57 +51,83 @@ class ActionSearchRestaurants(Action):
 					"""
                     location_details = response_json["location_suggestions"][0]
                     city_id = location_details["city_id"]
+                    city_name = location_details["city_name"]
 
                     """
-						fetch all cuisines available in the location
-					"""
-                    response_cuisine = _zomato.get_cuisines(city_id)
-                    supported_cuisines = [
-                        "American",
-                        "Chinese",
-                        "Italian",
-                        "Mexican",
-                        "North Indian",
-                        "South Indian",
-                    ]
-                    filtered_cuisine = {
-                        key: value
-                        for key, value in response_cuisine.items()
-                        if value in supported_cuisines
-                    }
+                        Validate if the location details is of the requested location
+                    """
+                    if location.lower() == city_name.lower():
 
-                    if cuisine is not None:
-                        cuisine_list = [
-                            key
-                            for key, value in filtered_cuisine.items()
-                            if str(value).lower() == cuisine.lower()
+                        """
+                            fetch all cuisines available in the location
+                        """
+                        response_cuisine = _zomato.get_cuisines(city_id)
+                        supported_cuisines = [
+                            "American",
+                            "Chinese",
+                            "Italian",
+                            "Mexican",
+                            "North Indian",
+                            "South Indian",
                         ]
-                    else:
-                        cuisine_list = [key for key, value in filtered_cuisine.items()]
+                        """ 
+                            filter only supported cuisines
+                        """
+                        filtered_cuisine = {
+                            key: value
+                            for key, value in response_cuisine.items()
+                            if value in supported_cuisines
+                        }
 
-                    restaurants_found = self.search_restaurant(
-                        location, location_details, cuisine_list
-                    )
+                        if cuisine is not None:
+                            cuisine_list = [
+                                key
+                                for key, value in filtered_cuisine.items()
+                                if str(value).lower() == cuisine.lower()
+                            ]
+                        else:
+                            cuisine_list = [
+                                key for key, value in filtered_cuisine.items()
+                            ]
 
-                    if len(restaurants_found) > 0:
-                        for restaurant in restaurants_found:
-                            response_message = (
-                                response_message
-                                + restaurant["name"]
-                                + " in "
-                                + restaurant["address"]
-                                + " has been rated "
-                                + restaurant["rating"]
-                                + "\n"
-                            )
+                        restaurants_found = self.search_restaurant(
+                            location, location_details, cuisine_list
+                        )
+
+                        if len(restaurants_found) > 0:
+                            restaurant_filtered_budget = self.filter_restaurant_by_budget(budget, restaurants_found)
+                            number_of_records = 5
+
+                            if len(restaurant_filtered_budget) < 5:
+                                number_of_records = len(restaurant_filtered_budget)
+
+                            for index in range(0, number_of_records):
+                                restaurant = restaurant_filtered_budget[index]
+                                response_message = (
+                                    response_message
+                                    + restaurant["name"]
+                                    + " in "
+                                    + restaurant["address"] 
+                                    + " has been rated "
+                                    + restaurant["rating"]
+                                    + " out of 5"
+                                    + "\n"
+                                )
+                        else:
+                            search_validity = "invalid"
                     else:
-                        response_message = "no results"
+                        search_validity = "invalid"
+                else:
+                    search_validity = "invalid"                            
             else:
-                dispatcher.utter_message("no results")
+                search_validity = "invalid"
 
-        dispatcher.utter_message(response_message)
+        if search_validity == "invalid":
+            dispatcher.utter_template("utter_search_invalid", tracker)
+        else:            
+            dispatcher.utter_message(response_message)
 
-        return [SlotSet("location", location)]
+        return [SlotSet("search_validity", search_validity)]
 
     def search_restaurant(
         self, location="", location_details={}, cuisine_list=[]
@@ -116,6 +144,7 @@ class ActionSearchRestaurants(Action):
             cuisine_list,
             location_details["city_id"],
             "city",
+            100
         )
 
         if response is not None:
@@ -132,6 +161,37 @@ class ActionSearchRestaurants(Action):
                     )
 
         return restaurants_found
+
+    def filter_restaurant_by_budget(self, budget, restaurant_list) -> list:
+        filtered_restaurant_list = []
+
+        """
+            Set the budget range based on input
+        """
+        rangeMin = 0
+        rangeMax = 999999
+       
+        if budget == "299":
+            rangeMax = 299
+        elif budget == "700":
+            rangeMin = 300
+            rangeMax = 700
+        elif budget == "701":
+            rangeMin = 701
+        else:
+            """
+                Default budget
+            """
+            rangeMin = 0
+            rangeMax = 9999
+
+        for restaurant in restaurant_list:
+            avg_cost = int(restaurant["avg_cost_for_2"])
+
+            if avg_cost >= rangeMin and avg_cost <= rangeMax:
+                filtered_restaurant_list.append(restaurant)
+
+        return filtered_restaurant_list
 
 
 """ Custom action to validate input location
@@ -164,7 +224,8 @@ class ActionValidateLocation(Action):
 
                     location_validity = (
                         "invalid"
-                        if location.lower() not in tier1_cities_lower and location.lower() not in tier2_cities_lower
+                        if location.lower() not in tier1_cities_lower
+                        and location.lower() not in tier2_cities_lower
                         else "valid"
                     )
                 else:
@@ -202,3 +263,19 @@ class ActionValidateCuisine(Action):
             )
 
         return [SlotSet("cuisine_validity", cuisine_validity)]
+
+
+class ActionRestarted(Action): 	
+	def name(self):
+		return 'action_restart'
+
+	def run(self, dispatcher, tracker, domain):
+		return[Restarted()] 
+
+
+class ActionSlotReset(Action): 
+	def name(self): 
+		return 'action_slot_reset' 
+
+	def run(self, dispatcher, tracker, domain): 
+		return[AllSlotsReset()]       
