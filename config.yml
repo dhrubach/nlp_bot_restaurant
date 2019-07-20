@@ -9,7 +9,8 @@ policies:
       max_history: 5
       state_featurizer:
         - name: BinarySingleStateFeaturizer
-    epochs: 100
+    epochs: 200
+    validation_split: 0.2
   - name: FallbackPolicy
     fallback_action_name: 'action_default_fallback'
   - name: MemoizationPolicy
