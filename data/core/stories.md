@@ -530,11 +530,14 @@
 * ask_restaurant
   - utter_ask_location
 * out_of_scope
+  - utter_location_invalid
+  - utter_ask_location_retry
+* out_of_scope
   - utter_bye
   - action_restart
 
 ## story_28_location_invalid_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
   - action_location_valid
   - slot{"location_validity" : "invalid"}
   - utter_location_invalid
