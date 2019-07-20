@@ -95,6 +95,7 @@
   - utter_ask_budget
 * ask_budget{"budget": "299"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -197,6 +198,7 @@
 * ask_restaurant
   - utter_ask_location
 * out_of_scope
+  - action_slot_reset
   - utter_location_invalid
   - utter_ask_location_retry
 * affirm
@@ -293,6 +295,7 @@
   - utter_ask_budget
 * ask_budget{"budget":"701"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}
   - utter_ask_details
 * deny
   - utter_deny
@@ -309,6 +312,7 @@
   - utter_ask_budget
 * ask_budget{"budget":"701"}
   - action_restaurant
+  - slot{"search_validity" : "valid"}
   - utter_ask_details
 * affirm
   - utter_ask_email
@@ -358,6 +362,8 @@
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
@@ -485,11 +491,14 @@
 * ask_restaurant
   - utter_ask_location
 * out_of_scope
+  - utter_location_invalid
+  - utter_ask_location_retry
+* out_of_scope
   - utter_bye
   - action_restart
 
 ## story_28_location_invalid_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
   - action_location_valid
   - slot{"location_validity" : "invalid"}
   - utter_location_invalid
@@ -499,16 +508,18 @@
   - action_restart
 
 ## story_29_cuisine_location_valid_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"} 
   - action_location_valid
   - slot{"location_validity" : "valid"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * out_of_scope
   - utter_bye
   - action_restart
 
 ## story_30_location_invalid_retry_email_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
   - action_location_valid
   - slot{"location_validity" : "invalid"}
   - utter_location_invalid
@@ -529,7 +540,7 @@
   - action_restart
 
 ## story_31_location_invalid_retry_budget_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
   - action_location_valid
   - slot{"location_validity" : "invalid"}
   - utter_location_invalid
@@ -559,6 +570,8 @@
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * out_of_scope
   - utter_bye
@@ -578,6 +591,8 @@
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * ask_budget{"budget": "700"}
   - action_restaurant
@@ -588,9 +603,11 @@
   - action_restart
 
 ## story_34_cuisine_location_buget_valid_email_out_of_scope
-* ask_restaurant{“location”:”mysore”, “cuisine”:”indian”} 
+* ask_restaurant{"location":"Kolkata", "cuisine":"mexican"}
   - action_location_valid
   - slot{"location_validity" : "valid"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
@@ -614,6 +631,8 @@
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
@@ -639,6 +658,8 @@
   - slot{"location_validity" : "valid"}
   - utter_ask_cuisine
 * ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
   - utter_ask_budget
 * ask_budget{"budget": "300"}
   - action_restaurant
