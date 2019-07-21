@@ -13,7 +13,7 @@ from rasa_sdk.events import AllSlotsReset, SlotSet, Restarted
 
 from zomato.zomato_api import Zomato
 
-
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("__name__")
 user_key = ""
 config = {"user_key": user_key}
@@ -109,6 +109,9 @@ class ActionSearchRestaurants(Action):
                                 if index < 5:
                                     response_message = (
                                         response_message
+                                        + "\n   "
+                                        + str(index + 1)
+                                        + ". "
                                         + restaurant["name"]
                                         + " in "
                                         + restaurant["address"] 
@@ -312,8 +315,20 @@ class ActionSendEmail(Action):
     def run(self, dispatcher, tracker, domain):
 
         location = tracker.get_slot("location")
+        cuisine = tracker.get_slot("cuisine")
         email_id = tracker.get_slot("email")
         email_message = tracker.get_slot("email_message")
+        
+        """
+            Parse email id
+            Required to handle email id sent from SLACK connector
+        """
+        str_email_id = str(email_id)
+        if str_email_id.startswith("mailto"):
+            separator_index = str_email_id.index("|")
+            if separator_index > -1:
+                emails = str_email_id.split("|")
+                email_id = emails[1]
 
         """
             Create an email message
@@ -321,7 +336,7 @@ class ActionSendEmail(Action):
         message = EmailMessage()
 
         message.set_content(email_message)
-        message['Subject'] = "Restaurant Bot | List of Restaurants in {0}".format(location)
+        message['Subject'] = "Restaurant Bot | List of {0} Restaurants in {1}".format(cuisine, location)
 
         """
             Read SMTP configuration
@@ -333,17 +348,17 @@ class ActionSendEmail(Action):
             for line in mail_file:
                 name, var = line.partition("=")[::2]
                 smtp_config[name.strip()] = var.strip()
-		
+		        
         """
             Send email to the user
         """
         try:
             s = smtplib.SMTP_SSL(host=smtp_config["smtpserver_host"], port=smtp_config["smtpserver_port"])
             s.login(smtp_config["username"], smtp_config["password"])
-
+        
             message['From'] = smtp_config["from_email"]
             message['To'] = email_id
-
+           
             s.send_message(message)
             s.quit()
         except Exception as e:
