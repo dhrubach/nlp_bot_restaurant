@@ -454,7 +454,7 @@
 - Suggest me a good [mexican](cuisine) restaurant
 - how can you help me find a [french](cuisine) restaurant?
 - [italian](cuisine)
-<!-- location + cuisine entities : 17 training samples -->
+<!-- location + cuisine entities : 18 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
 - Hey, can you help me with locating a [mexican](cuisine) restaurant in [Lakhanpur](location)
@@ -472,6 +472,7 @@
 - Quickly get me a [northindian](cuisine) place in [New Delhi](location)
 - Where can i get [south-indina](cuisine) food in [Mangaluru](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [cyberabad](location)
+- [chinese](cuisine) eating place in [mumbai](location)
 <!-- no entity : 21 training samples -->
 - I need to find a restaurant
 - Can you find me a good restaurant?
