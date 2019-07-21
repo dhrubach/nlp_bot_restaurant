@@ -92,18 +92,18 @@ templates:
   utter_did_that_help:
   - text: Did that help you?
   utter_deny:
-  - text: Sorry. Hope to serve you better next time.
+  - text: Sorry, hope to serve you better next time.
   utter_greet:
   - text: Hey there! How can i help you today?
   - text: Howdy! Is there anything i can help you with?
   utter_happy:
   - text: Great carry on!
   utter_location_invalid:
-  - text: Sorry. We do not serve at the requested location - {location}.
+  - text: Sorry, we do not serve at the requested location - {location}.
   utter_out_of_scope:
   - text: Sorry, I do not understand this. Please be specific.
   utter_search_invalid:
-  - text: Sorry. We do not have any restaurants which match the requested criteria.
+  - text: Sorry, we do not have any restaurants which match your requirements. Hope to serve you better next time!
   utter_thanks_response:
   - text: You are welcome!
   - text: You are most welcome! Is there anything else that i can help you with?
