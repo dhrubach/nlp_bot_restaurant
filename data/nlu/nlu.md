@@ -372,7 +372,7 @@
 - ([\w\.-]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)
 
 ## intent:ask_restaurant
-<!-- only 'location' entity : 54 training samples-->
+<!-- only 'location' entity : 58 training samples-->
 - Find me a place to eat in [Bangalore](location)
 - I need a new restaurant in [Bengaluru](location)
 - [Bhopal](location)
@@ -393,6 +393,8 @@
 - Where should I eat in [Delhi](location)?
 - [Delhi NCR](location)
 - Suggest me a good restaurant around [New Delhi](location)
+- [Bengaluru](location)
+- [Amratsar](location)
 - I need to find this restaurant in [Delhi](location)
 - [Dilli](location)
 - Show me the closest open restaurant in [Chennai](location)
@@ -422,11 +424,13 @@
 - [Surat](location)
 - [Jamshedpur](location)
 - Would you find me a restaurant in [calcutta](location)??
+- Okay. Show me some in [bengaluru](location)
 - [Rourkela](location)
 - [Vijayawada](location)
 - [Ajmer](location)
 - [Allahabad](location)
 - [raurkela](location)
+- Can you suggest some good restaurants in [bombay](location)
 <!-- only 'cuisine' entity : 26 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant
 - [american](cuisine)
@@ -454,7 +458,7 @@
 - Suggest me a good [mexican](cuisine) restaurant
 - how can you help me find a [french](cuisine) restaurant?
 - [italian](cuisine)
-<!-- location + cuisine entities : 18 training samples -->
+<!-- location + cuisine entities : 22 training samples -->
 - I'm gonna need help finding a [indian](cuisine) restaurant in [Mysore](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [Lucknow](location)
 - Hey, can you help me with locating a [mexican](cuisine) restaurant in [Lakhanpur](location)
@@ -473,7 +477,11 @@
 - Where can i get [south-indina](cuisine) food in [Mangaluru](location)
 - i'm looking for a [Chinese](cuisine) restaurant in [cyberabad](location)
 - [chinese](cuisine) eating place in [mumbai](location)
-<!-- no entity : 21 training samples -->
+- I want to eat [italian](cuisine) food in [Prayagraj](location)
+- Okay. I want to eat [south indian](cuisine) in [allahabad](location)
+- Okay. Show me some [north indian](cuisine) restaurants in [prayagraj](location)
+- What's a good place to eat [mexican](cuisine) food in [chandighar](location)
+<!-- no entity : 22 training samples -->
 - I need to find a restaurant
 - Can you find me a good restaurant?
 - Would you be able to search a place to eat?
@@ -487,6 +495,7 @@
 - how can you help me find a restaurant
 - pick a restaurant for me
 - please find a restaurant for me
+- I'm hungry. Looking out for some good restaurants
 - I want to eat
 - I am feeling hungry
 - I need a new restaurant
@@ -727,8 +736,9 @@
 - Chandighar
 - chandighar
 
-## synonym:Prayagraj
+## synonym:Allahabad
 - prayagraj
+- Prayagraj
 - Allahabad
 - allahabad
 

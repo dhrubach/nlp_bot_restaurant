@@ -9,11 +9,13 @@ intents:
 - greet
 - out_of_scope
 - thank
+
 entities:
 - budget
 - cuisine
 - email
 - location
+
 slots:
   budget:
     type: text
@@ -40,6 +42,7 @@ slots:
     values:
     - valid
     - invalid
+
 templates:
   utter_bye:
   - text: See you again!
@@ -88,7 +91,7 @@ templates:
   utter_confirm_email:
   - text: An email has been sent to you.
   utter_cuisine_invalid:
-  - text: Sorry. We do not serve the requested cuisine - {cuisine}.
+  - text: Sorry. We do not serve the requested cuisine.
   utter_did_that_help:
   - text: Did that help you?
   utter_deny:
@@ -99,7 +102,7 @@ templates:
   utter_happy:
   - text: Great carry on!
   utter_location_invalid:
-  - text: Sorry, we do not serve at the requested location - {location}.
+  - text: Sorry, we do not serve at the requested location.
   utter_out_of_scope:
   - text: Sorry, I do not understand this. Please be specific.
   utter_search_invalid:
@@ -107,6 +110,7 @@ templates:
   utter_thanks_response:
   - text: You are welcome!
   - text: You are most welcome! Is there anything else that i can help you with?
+
 actions:
 - action_cuisine_valid
 - action_location_valid
