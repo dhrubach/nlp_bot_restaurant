@@ -53,17 +53,16 @@ def train_nlu_core_model() -> None:
         config=DEFAULT_CONFIG_PATH,
         training_files=DEFAULT_DATA_PATH,
         fixed_model_name="restaurant_rasa_model",
-        force_training=True,
+        force_training=False,
     )
 
 
 if __name__ == "__main__":
-    configure_colored_logging(loglevel="INFO")
+    configure_colored_logging(loglevel="ERROR")
 
     parser = create_argument_parser()
     cmdline_arguments = parser.parse_args()
 
-    clear_model_folder()
     train_nlu_core_model()
 
     if cmdline_arguments.shell:
