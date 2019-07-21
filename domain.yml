@@ -9,13 +9,11 @@ intents:
 - greet
 - out_of_scope
 - thank
-
 entities:
-- budget  
+- budget
 - cuisine
 - email
 - location
-
 slots:
   budget:
     type: text
@@ -25,11 +23,11 @@ slots:
     type: categorical
     values:
     - valid
-    - invalid      
+    - invalid
   email:
     type: text
   email_message:
-    type: text    
+    type: text
   location:
     type: text
   location_validity:
@@ -42,94 +40,95 @@ slots:
     values:
     - valid
     - invalid
-
-actions:
-  - action_cuisine_valid
-  - action_location_valid
-  - action_restaurant
-  - action_restart
-  - action_send_email
-  - action_slot_reset
-  - utter_ask_location
-  - utter_ask_location_retry
-  - utter_ask_cuisine
-  - utter_ask_cuisine_retry
-  - utter_ask_budget
-  - utter_ask_details
-  - utter_ask_email
-  - utter_bye
-  - utter_confirm_email
-  - utter_cuisine_invalid
-  - utter_deny
-  - utter_did_that_help
-  - utter_greet
-  - utter_happy
-  - utter_location_invalid
-  - utter_search_invalid
-  - utter_thanks_response
-
 templates:
   utter_bye:
-    - text: See you again!
-    - text: goodbye, hope i was of help today
-    - text: Bye-bye
-    - text: Bye!
+  - text: See you again!
+  - text: goodbye, hope i was of help today
+  - text: Bye-bye
+  - text: Bye!
   utter_ask_budget:
-    - text: What would be your preferred budget?
-      buttons:
-      - title: Lesser than Rs. 300
-        payload: '/ask_budget{"budget": "299"}'
-      - title: Rs. 300 to 700
-        payload: '/ask_budget{"budget": "700"}'
-      - title: More than Rs. 700
-        payload: '/ask_budget{"budget": "701"}'
+  - text: What would be your preferred budget?
+    buttons:
+    - title: Lesser than Rs. 300
+      payload: '/ask_budget{"budget": "299"}'
+    - title: Rs. 300 to 700
+      payload: '/ask_budget{"budget": "700"}'
+    - title: More than Rs. 700
+      payload: '/ask_budget{"budget": "701"}'
   utter_ask_cuisine:
-    - text: what kind of cuisine would you like?
-      buttons:
-      - title: Chinese
-        payload: Chinese
-      - title: Mexican
-        payload: Mexican
-      - title: Italian
-        payload: Italian
-      - title: American
-        payload: American
-      - title: South Indian
-        payload: South Indian
-      - title: North Indian
-        payload: North Indian
+  - text: what kind of cuisine would you like?
+    buttons:
+    - title: Chinese
+      payload: Chinese
+    - title: Mexican
+      payload: Mexican
+    - title: Italian
+      payload: Italian
+    - title: American
+      payload: American
+    - title: South Indian
+      payload: South Indian
+    - title: North Indian
+      payload: North Indian
   utter_ask_cuisine_retry:
-    - text: Will you like to search for some other cuisine?
-    - text: Can I help you look for some other cuisine today?    
+  - text: Will you like to search for some other cuisine?
+  - text: Can I help you look for some other cuisine today?
   utter_ask_details:
   - text: Would you like me to send an email with details of restaurants?
   utter_ask_email:
-    - text: Please provide your email id.
+  - text: Please provide your email id.
   utter_ask_location:
-    - text: Which city would you like to get the details of?
-    - text: In what location?
-    - text: Which city are you looking for?
-    - text: Can you tell me the location you are looking for?
+  - text: Which city would you like to get the details of?
+  - text: In what location?
+  - text: Which city are you looking for?
+  - text: Can you tell me the location you are looking for?
   utter_ask_location_retry:
-    - text: Will you like to search for some other location?
-    - text: Can I help you look for a restaurant at some other location?    
+  - text: Will you like to search for some other location?
+  - text: Can I help you look for a restaurant at some other location?
   utter_confirm_email:
-    - text: An email has been sent to you.
+  - text: An email has been sent to you.
   utter_cuisine_invalid:
-    - text: Sorry. We do not serve the requested cuisine - {cuisine}.    
+  - text: Sorry. We do not serve the requested cuisine - {cuisine}.
   utter_did_that_help:
-    - text: Did that help you?
+  - text: Did that help you?
   utter_deny:
-    - text: Sorry. Hope to serve you better next time.    
+  - text: Sorry. Hope to serve you better next time.
   utter_greet:
-    - text: Hey there! How can i help you today?
-    - text: Howdy! Is there anything i can help you with?
+  - text: Hey there! How can i help you today?
+  - text: Howdy! Is there anything i can help you with?
   utter_happy:
-    - text: Great carry on!
+  - text: Great carry on!
   utter_location_invalid:
-    - text: Sorry. We do not serve at the requested location - {location}.
+  - text: Sorry. We do not serve at the requested location - {location}.
+  utter_out_of_scope:
+  - text: Sorry, I do not understand this. Please be specific.
   utter_search_invalid:
-    - text: Sorry. We do not have any restaurants which match the requested criteria.    
+  - text: Sorry. We do not have any restaurants which match the requested criteria.
   utter_thanks_response:
-    - text: You are welcome!
-    - text: You are most welcome! Is there anything else that i can help you with?
+  - text: You are welcome!
+  - text: You are most welcome! Is there anything else that i can help you with?
+actions:
+- action_cuisine_valid
+- action_location_valid
+- action_restart
+- action_restaurant
+- action_send_email
+- action_slot_reset
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_cuisine_retry
+- utter_ask_details
+- utter_ask_email
+- utter_ask_location
+- utter_ask_location_retry
+- utter_bye
+- utter_confirm_email
+- utter_cuisine_invalid
+- utter_deny
+- utter_did_that_help
+- utter_greet
+- utter_happy
+- utter_location_invalid
+- utter_out_of_scope
+- utter_search_invalid
+- utter_thanks_response
