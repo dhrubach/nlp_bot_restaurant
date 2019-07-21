@@ -2,6 +2,39 @@
 
 a restaurant chatbot using open source chat framework [RASA](https://rasa.com/). Integrates with [Zomato API](https://developers.zomato.com/) to fetch restaurant information.
 
+## Pre-requisites
+
+- python 3.7.0
+- rasa 1.1.4
+- spacy 2.1.4
+- en-core-web-md 2.1.0
+
+## Installation
+
+### RASA
+
+Refer to official [installation guide](https://rasa.com/docs/rasa/user-guide/installation/) to install RASA
+
+### Spacy
+
+1. Package Installation
+
+   ```python
+   pip install -U spacy
+   ```
+
+2. Model Installation
+
+   ```python
+   python -m spacy download en-core-web-md
+   ```
+
+3. Create custom shortcut link to Spacy model
+
+   ```python
+   python -m spacy link en-core-web-md en
+   ```
+
 ## Repo Information
 
 This repo contains training data and script files necessary to compile and execute this restaurant chatbot. It comprises of the following files:
@@ -18,13 +51,13 @@ This repo contains training data and script files necessary to compile and execu
   - **zomato_test.py** : contains 3 test functions for Zomato API - location details, cuisine details and restaurant search
 - **action_api_test.py** : executes Zomato API test functions from command line
 - **actions_server.py** : contains code to start a RASA actions server. This is used to serve RASA custom actions.
-- **actions.py** : contains the following custom actions
+- **actions.py** : contains the following custom actions (_insert **ZOMATO API** key in this script file before starting RASA server_)
   - search restaurant
   - validate location
   - validate cuisine
   - send email
   - restart conversation
-  - reset slots
+  - reset slots  
 - **nlu_test.py** : contains code to test generated NLU models
 - **nlu_train.py** : contains code to
   - train a NLU model
@@ -43,6 +76,7 @@ This repo contains training data and script files necessary to compile and execu
 - **credentials.yml** contains authentication token to connect with channels like slack
 - **domain.yml** defines chatbot domain like entities, actions, templates, slots  
 - **endpoints.yml** contains the webhook configuration for custom action
+- **smtpconfig.txt** contains SMTP server configuration information (_If using GMAIL, setup account and generate app password_) .
 
 ## Usages
 
@@ -69,4 +103,25 @@ This repo contains training data and script files necessary to compile and execu
   ```python
   python actions_server.py
   ```
-  
+
+- Train RASA NLU and Core model
+
+  ```python
+  python rasa_train.py
+  ```
+
+  This will generate _restaurant-rasa-model.tar.gz_ inside **models** folder
+
+- Starts an interactive session with restaurant chatbot
+
+  ```python
+  python rasa_train.py --shell
+  ```
+
+  _This step will recreate RASA NLU and Core models_
+
+- Run RASA server to connect slack channel
+
+  ```python
+  rasa run -m models -p 5004 --connctor slack --credentials credentials.yml
+  ```
