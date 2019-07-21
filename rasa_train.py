@@ -11,6 +11,7 @@ from rasa.constants import (
     DEFAULT_CONFIG_PATH,
 )
 from rasa.train import train
+from rasa.utils.io import configure_colored_logging
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger("__name__")
@@ -57,6 +58,8 @@ def train_nlu_core_model() -> None:
 
 
 if __name__ == "__main__":
+    configure_colored_logging(loglevel="INFO")
+
     parser = create_argument_parser()
     cmdline_arguments = parser.parse_args()
 
