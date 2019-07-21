@@ -20,10 +20,12 @@ def create_argument_parser() -> argparse.ArgumentParser:
 
 
 def test_nlu_model():
-    test_nlu(DEFAULT_MODELS_PATH, DEFAULT_DATA_PATH, {})
+    nlu_data = DEFAULT_DATA_PATH + "/nlu"
+    test_nlu(DEFAULT_MODELS_PATH, nlu_data, {})
 
 def test_nlu_model_cross_validation() -> None:
-    perform_nlu_cross_validation('config.yml', DEFAULT_DATA_PATH, {})
+    nlu_data = DEFAULT_DATA_PATH + "/nlu"
+    perform_nlu_cross_validation('config.yml', nlu_data, {})
 
 if __name__ == "__main__":
     parser = create_argument_parser()
