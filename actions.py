@@ -146,9 +146,7 @@ class ActionSearchRestaurants(Action):
             else:
                 search_validity = "invalid"
 
-        if search_validity == "invalid":
-            dispatcher.utter_template("utter_search_invalid", tracker)
-        else:            
+        if search_validity == "valid":
             dispatcher.utter_message(response_message)
 
         return [SlotSet("search_validity", search_validity), SlotSet("email_message", email_message)]
@@ -230,7 +228,6 @@ class ActionValidateLocation(Action):
         location_validity = "valid"
 
         if not location:
-            dispatcher.utter_template("utter_ask_location", tracker)
             location_validity = "invalid"
         else:
             filepath = DEFAULT_DATA_PATH + "/cities.json"
@@ -270,7 +267,6 @@ class ActionValidateCuisine(Action):
         cuisine_validity = "valid"
 
         if not cuisine:
-            dispatcher.utter_template("utter_ask_cuisine", tracker)
             cuisine_validity = "invalid"
         else:
             supported_cuisines = [
