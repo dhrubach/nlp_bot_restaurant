@@ -409,6 +409,7 @@
 - [Rajahmundry](location)
 - [Ujjain](location)
 - Could you find a restaurant for me in [Bengaluru](location)? 
+- Would you find me a restaurant in [Allahabad](location)??
 - [vadodara](location)
 - [Srinagar](location)
 - Could you find me a restaurant in [Agra](location)? 
@@ -425,6 +426,7 @@
 - [Jamshedpur](location)
 - Would you find me a restaurant in [calcutta](location)??
 - Okay. Show me some in [bengaluru](location)
+- Recommend me a restaurant around [Prayagraj](location)
 - [Rourkela](location)
 - [Vijayawada](location)
 - [Ajmer](location)
@@ -516,7 +518,8 @@
 <!-- tier 2 cities -->
 - Agra 
 - Ajmer 
-- Aligarh 
+- Aligarh
+- Allahabad
 - Amravati 
 - Amritsar 
 - Asansol 
@@ -578,7 +581,6 @@
 - Palakkad 
 - Patna 
 - Pondicherry 
-- Prayagraj 
 - Pune 
 - Raipur 
 - Rajkot 
