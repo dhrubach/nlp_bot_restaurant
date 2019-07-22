@@ -103,7 +103,12 @@ This repo contains training data and script files necessary to compile and execu
   ```python
   python actions_server.py
   ```
-
+  Equivalent RASA CLI command 
+  
+  ```python
+  rasa run actions
+  ```
+  
 - Train RASA NLU and Core model
 
   ```python
@@ -111,6 +116,12 @@ This repo contains training data and script files necessary to compile and execu
   ```
 
   This will generate _restaurant-rasa-model.tar.gz_ inside **models** folder
+
+  Equivalent RASA CLI command 
+  
+  ```python
+  rasa train
+  ```
 
 - Starts an interactive session with restaurant chatbot
 
@@ -120,8 +131,15 @@ This repo contains training data and script files necessary to compile and execu
 
   _This step will recreate RASA NLU and Core models_
 
+  Equivalent RASA CLI command  
+  
+  ```python
+  rasa shell
+  ```
+
 - Run RASA server to connect slack channel
 
   ```python
   rasa run -m models -p 5004 --connctor slack --credentials credentials.yml
   ```
+---
