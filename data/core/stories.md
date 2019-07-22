@@ -2466,4 +2466,200 @@
   - utter_bye
   - action_restart
 
+## story_115_greet_location_cuisine_invalid_retry_no_email
+* greet
+  - utter_greet
+* ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "invalid"}
+  - utter_cuisine_invalid
+  - utter_ask_cuisine_retry
+* ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* deny
+  - utter_did_that_help
+* deny
+  - utter_deny
+  - utter_bye
+  - action_restart
+
+## story_116_no_greet_location_cuisine_invalid_retry_no_email
+* ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "invalid"}
+  - utter_cuisine_invalid
+  - utter_ask_cuisine_retry
+* ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* deny
+  - utter_did_that_help
+* deny
+  - utter_deny
+  - utter_bye
+  - action_restart
+
+## story_117_greet_cuisine_location_invalid_retry_no_email
+* greet
+  - utter_greet
+* ask_restaurant{"location": "agra", "cuisine": "italian"} 
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - action_location_valid
+  - slot{"location_validity" : "invalid"}
+  - utter_location_invalid
+  - utter_ask_location_retry
+* ask_restaurant{"location": "agra"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* deny
+  - utter_did_that_help
+* deny
+  - utter_deny
+  - utter_bye
+  - action_restart
+
+## story_118_no_greet_cuisine_location_invalid_retry_no_email
+* ask_restaurant{"location": "agra", "cuisine": "italian"} 
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - action_location_valid
+  - slot{"location_validity" : "invalid"}
+  - utter_location_invalid
+  - utter_ask_location_retry
+* ask_restaurant{"location": "agra"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* deny
+  - utter_did_that_help
+* deny
+  - utter_deny
+  - utter_bye
+  - action_restart
+
+## story_119_greet_location_cuisine_invalid_retry_email
+* greet
+  - utter_greet
+* ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "invalid"}
+  - utter_cuisine_invalid
+  - utter_ask_cuisine_retry
+* ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* affirm
+  - utter_ask_email
+* ask_email{"email": "abc@abc.com"}
+  - action_send_email
+  - utter_confirm_email
+  - utter_bye
+  - action_restart
+
+## story_120_no_greet_location_cuisine_invalid_retry_email
+* ask_restaurant{"location": "agra", "cuisine": "italian"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}  
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "invalid"}
+  - utter_cuisine_invalid
+  - utter_ask_cuisine_retry
+* ask_restaurant{"cuisine": "Chinese"}
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* affirm
+  - utter_ask_email
+* ask_email{"email": "abc@abc.com"}
+  - action_send_email
+  - utter_confirm_email
+  - utter_bye
+  - action_restart
+
+## story_121_greet_cuisine_location_invalid_retry_email
+* greet
+  - utter_greet
+* ask_restaurant{"location": "agra", "cuisine": "italian"} 
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - action_location_valid
+  - slot{"location_validity" : "invalid"}
+  - utter_location_invalid
+  - utter_ask_location_retry
+* ask_restaurant{"location": "agra"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* affirm
+  - utter_ask_email
+* ask_email{"email": "abc@abc.com"}
+  - action_send_email
+  - utter_confirm_email
+  - utter_bye
+  - action_restart
+
+## story_122_no_greet_cuisine_location_invalid_retry_email
+* ask_restaurant{"location": "agra", "cuisine": "italian"} 
+  - action_cuisine_valid
+  - slot{"cuisine_validity" : "valid"}
+  - action_location_valid
+  - slot{"location_validity" : "invalid"}
+  - utter_location_invalid
+  - utter_ask_location_retry
+* ask_restaurant{"location": "agra"}
+  - action_location_valid
+  - slot{"location_validity" : "valid"}
+  - utter_ask_budget
+* ask_budget{"budget": "300"}
+  - action_restaurant
+  - slot{"search_validity" : "valid", "email_message": ""}  
+  - utter_ask_details
+* affirm
+  - utter_ask_email
+* ask_email{"email": "abc@abc.com"}
+  - action_send_email
+  - utter_confirm_email
+  - utter_bye
+  - action_restart
+
 <!-- markdownlint-restore -->
