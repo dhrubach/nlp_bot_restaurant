@@ -7,7 +7,7 @@ a restaurant chatbot using open source chat framework [RASA](https://rasa.com/).
 - python 3.7.0
 - rasa 1.1.4
 - spacy 2.1.4
-- en-core-web-md 2.1.0
+- en_core_web_md 2.1.0
 
 ## Installation
 
@@ -26,13 +26,13 @@ Refer to official [installation guide](https://rasa.com/docs/rasa/user-guide/ins
 2. Model Installation
 
    ```python
-   python -m spacy download en-core-web-md
+   python -m spacy download en_core_web_md
    ```
 
 3. Create custom shortcut link to Spacy model
 
    ```python
-   python -m spacy link en-core-web-md en
+   python -m spacy link en_core_web_md en
    ```
 
 ## Repo Information
