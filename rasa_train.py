@@ -43,6 +43,7 @@ def run_rasa_shell() -> None:
     argument.enable_api = False
     argument.endpoints = None
     argument.credentials = None
+    argument.remote_storage = None
 
     run(argument)
 
